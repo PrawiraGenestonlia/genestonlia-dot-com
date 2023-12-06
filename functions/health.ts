@@ -1,5 +1,9 @@
-export const onRequest = async (context) => {
+import { EventContext } from '@cloudflare/workers-types'
+import { Env } from '../types'
+
+interface Data {}
+
+export const onRequest = async (context: EventContext<Env, string, Data>) => {
   console.log(context)
-  console.log('hello from worker')
-  return new Response('hello from worker')
+  return new Response(JSON.stringify({ status: 'OK!' }))
 }
