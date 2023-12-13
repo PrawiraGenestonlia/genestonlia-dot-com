@@ -1,4 +1,5 @@
 import { EventContext } from '@cloudflare/workers-types'
+
 import { Env } from '../types'
 import { JsonResponse } from '../utils/json-response'
 
@@ -13,6 +14,6 @@ export const onRequest = async (context: EventContext<Env, string, Data>) => {
     },
     {
       status: 200,
-    }
+    },
   )
 }
